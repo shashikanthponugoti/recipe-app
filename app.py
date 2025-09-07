@@ -224,8 +224,8 @@ def recipe_delete(recipe_id):
     flash("Recipe deleted.", "success")
     return redirect(url_for("recipes_list"))
 
-# ---------------------------
-# Run app
-# ---------------------------
+# ===== RUN APP =====
 if __name__ == "__main__":
-    app.run(debug=True)
+    # Render sets PORT env variable
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=True)
