@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Recipes - RecipePrep{% endblock %}
+{% block content %}
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h1>All Recipes</h1>
+    {% if user %}
+      <a class="btn btn-primary" href="{{ url_for('recipe_new') }}">New Recipe</a>
+    {% endif %}
+  </div>
+
+  <div class="list-group">
+    {% for r in recipes %}
+      <a href="{{ url_for('recipe_detail', recipe_id=r['id']) }}" class="list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{ r['title'] }}</h5>
+          <small class="text-muted">{{ r['created_at'] }}</small>
+        </div>
+        <p class="mb-1">{{ r['description'][:200] }}{% if r['description']|length > 200 %}...{% endif %}</p>
+        <small class="text-muted">By {{ r['username'] }}</small>
+      </a>
+    {% endfor %}
+  </div>
+{% endblock %}

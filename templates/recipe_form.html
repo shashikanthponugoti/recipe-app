@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-4">🍲 Recipes</h2>
+<div class="row">
+  {% for recipe in recipes %}
+  <div class="col-md-4">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">{{ recipe[1] }}</h5>
+        <p class="card-text"><strong>Ingredients:</strong><br>{{ recipe[2] }}</p>
+        <p class="card-text"><strong>Instructions:</strong><br>{{ recipe[3] }}</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<a href="{{ url_for('add_recipe') }}" class="btn btn-success">➕ Add New Recipe</a>
+{% endblock %}

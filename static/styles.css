@@ -1,0 +1,6 @@
+/* static/styles.css - minimal extras */
+.pre-wrap {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+body { padding-bottom: 30px; }

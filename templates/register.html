@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Register - RecipePrep{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-5">
+    <h2>Create account</h2>
+    <form method="post">
+      <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input name="username" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input name="password" type="password" class="form-control" required />
+      </div>
+      <button class="btn btn-success">Register</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
